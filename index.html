@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propose Day Card</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fed7e2;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+            position: relative;
+        }
+        h2 {
+            color: #d53f8c;
+        }
+        p {
+            color: #4a4a4a;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: #d53f8c;
+            color: white;
+        }
+        .no {
+            background-color: #d1d5db;
+        }
+        .message {
+            margin-top: 15px;
+            color: #d53f8c;
+            font-weight: bold;
+            display: none;
+        }
+        .heart {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: red;
+            animation: float 1.5s infinite ease-out;
+        }
+        @keyframes float {
+            0% { transform: translate(-50%, 0); opacity: 1; }
+            100% { transform: translate(-50%, -30px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Happy Propose Day!</h2>
+        <p>Every love story is beautiful, but ours will be my favorite. Will you be mine forever?</p>
+        <div class="buttons">
+            <button class="yes" onclick="acceptProposal()">Yes! 💖</button>
+            <button class="no" onclick="rejectProposal()">Not now 💔</button>
+        </div>
+        <div class="message" id="message">Yay! ❤️ Can't wait for our journey together!</div>
+        <div class="heart">❤️</div>
+        <audio id="song" src="song.mp3"></audio>
+    </div>
+    <script>
+        function acceptProposal() {
+            document.getElementById("message").style.display = "block";
+            let audio = document.getElementById("song");
+            audio.play();
+        }
+
+        function rejectProposal() {
+            document.getElementById("message").style.display = "none";
+        }
+    </script>
+</body>
+</html>
